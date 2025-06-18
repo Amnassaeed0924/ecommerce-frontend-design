@@ -1,0 +1,55 @@
+@media (max-width: 768px) {
+    #deals {
+        margin: 0;
+        height: auto;
+        width: 100%;
+        flex-direction: column;
+        align-items: center; /* Centers the child elements */
+        text-align: center; /* Centers the text */
+    }
+
+    #text-timer {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the content */
+        justify-content: center;
+    }
+}
+@media (max-width:768px){
+    .original-products{
+        display: none !important;
+    }
+    #text-timer{
+        height: 10%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom:  1px solid lightgray;
+    }
+    #days-div{
+        display: none;  
+    }
+    #clock{
+        margin: 0;
+    }
+    .time{
+        height: 40px;
+        width: 38px;
+    }
+   .product-grid, .overlay button{
+    display: none !important;
+   }
+   .homeNoutdoor > div, .homeNoutdoor2 > div{
+    border-bottom: 1px solid lightgray;
+   }
+   .section-info span, #contact-suppliers{
+    display: none;
+
+   }
+   .section-info > button{
+    display: block;
+   }
+}
+
