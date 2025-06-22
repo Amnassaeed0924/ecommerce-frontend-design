@@ -1,9 +1,5 @@
 # 🛒 Ecommerce Web Design
 
-![Thumbnail](../Images/Thumbnail.jpg) 
-
----
-
 ## 📌 Objective
 
 This project focuses on designing and implementing a **fully responsive eCommerce web interface** based on a Figma design.  
