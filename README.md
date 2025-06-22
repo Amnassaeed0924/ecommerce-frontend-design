@@ -1,6 +1,6 @@
 # 🛒 Ecommerce Web Design
 
-![Thumbnail](./Images/Thumbnail.jpg) 
+![Thumbnail](../Images/Thumbnail.jpg) 
 
 ---
 
@@ -37,9 +37,8 @@ The goal was to apply core frontend development skills using **HTML, Tailwind CS
 
 ## 🛠️ Technologies Used
 
-- **Frontend**: HTML5, CSS3, Tailwind CSS, JavaScript (ES6)
+- **Frontend**: HTML5, CSS3, Tailwind CSS, JavaScript
 - **Fonts**: Inter (via Google Fonts)
-- **Icons**: Flaticon, Heroicons
 
 ---
 
