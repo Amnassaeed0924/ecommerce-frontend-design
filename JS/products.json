@@ -1,0 +1,115 @@
+[
+    {
+      "id": 1,
+      "name": "Xiaomi Pad 5 – 11” WQHD+ Display (Graphite Gray)",
+      "image": "../Images/tech/ipad.jpg",
+      "price": 998.00,
+      "originalPrice": 1128.00,
+      "rating": 4.0,
+      "reviews": 7.5,
+      "orders": 154,
+      "freeShipping": true,
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste vel aspernatur aperiam in molestiae reiciendis, impedit deleniti consequuntur, eius, voluptates delectus esse ut tempora cumque harum fuga necessitatibus facilis voluptatum. Reprehenderit molestias velit architecto expedita nemo quas cumque ab non nam pariatur veniam, sit maxime corrupti dolorem sunt odio dicta!"
+
+      
+    },
+    {
+      "id": 2,
+      "name": "Xiaomi Redmi Note 8",
+      "image": "../Images/tech/galaxy.jpg",
+      "price": 998.00,
+      "originalPrice": 1128.00,
+      "rating": 4.0,
+      "reviews": 7.5,
+      "orders": 154,
+      "freeShipping": true,
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste vel aspernatur aperiam in molestiae reiciendis, impedit deleniti consequuntur, eius, voluptates delectus esse ut tempora cumque harum fuga necessitatibus facilis voluptatum. Reprehenderit molestias velit architecto expedita nemo quas cumque ab non nam pariatur veniam, sit maxime corrupti dolorem sunt odio dicta!"
+
+    },
+    {
+      "id": 3,
+      "name": "Apple iPhone 12 – Blue, 128GB, 5G",
+      "image": "../Images/tech/iphone blue.jpg",
+      "price": 998.00,
+      "originalPrice": 1128.00,
+      "rating": 4.0,
+      "reviews": 7.5,
+      "orders": 154,
+      "freeShipping": true,
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste vel aspernatur aperiam in molestiae reiciendis, impedit deleniti consequuntur, eius, voluptates delectus esse ut tempora cumque harum fuga necessitatibus facilis voluptatum. Reprehenderit molestias velit architecto expedita nemo quas cumque ab non nam pariatur veniam, sit maxime corrupti dolorem sunt odio dicta!"
+
+    },
+    {
+      "id": 4,
+      "name": "Blue Gaming Headset – Wired Stereo Over-Ear",
+      "image": "../Images/tech/headphones.jpg",
+      "price": 998.00,
+      "originalPrice": 1128.00,
+      "rating": 4.0,
+      "reviews": 7.5,
+      "orders": 154,
+      "freeShipping": true,
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste vel aspernatur aperiam in molestiae reiciendis, impedit deleniti consequuntur, eius, voluptates delectus esse ut tempora cumque harum fuga necessitatibus facilis voluptatum. Reprehenderit molestias velit architecto expedita nemo quas cumque ab non nam pariatur veniam, sit maxime corrupti dolorem sunt odio dicta!"
+    },
+    {
+      "id": 5,
+      "name": "Canon Camera EOS 2000, Black 10x zoom",
+      "image": "../Images/tech/camera.jpg",
+      "price": 998.00,
+      "originalPrice": 1128.00,
+      "rating": 4.0,
+      "reviews": 7.5,
+      "orders": 154,
+      "freeShipping": true,
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste vel aspernatur aperiam in molestiae reiciendis, impedit deleniti consequuntur, eius, voluptates delectus esse ut tempora cumque harum fuga necessitatibus facilis voluptatum. Reprehenderit molestias velit architecto expedita nemo quas cumque ab non nam pariatur veniam, sit maxime corrupti dolorem sunt odio dicta!"
+    },
+    {
+      "id": 6,
+      "name": "Apple MacBook Pro 16” – M1 Max, Space Gray",
+      "image": "../Images/tech/laptop.jpg",
+      "price": 998.00,
+      "originalPrice": 1128.00,
+      "rating": 4.0,
+      "reviews": 7.5,
+      "orders": 154,
+      "freeShipping": true,
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste vel aspernatur aperiam in molestiae reiciendis, impedit deleniti consequuntur, eius, voluptates delectus esse ut tempora cumque harum fuga necessitatibus facilis voluptatum. Reprehenderit molestias velit architecto expedita nemo quas cumque ab non nam pariatur veniam, sit maxime corrupti dolorem sunt odio dicta!"
+    },
+    {
+      "id": 7,
+      "name": "Amazfit GTS 4 Smartwatch – Cloud White",
+      "image": "../Images/tech/watch.jpg",
+      "price": 998.00,
+      "originalPrice": 1128.00,
+      "rating": 4.0,
+      "reviews": 7.5,
+      "orders": 154,
+      "freeShipping": true,
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste vel aspernatur aperiam in molestiae reiciendis, impedit deleniti consequuntur, eius, voluptates delectus esse ut tempora cumque harum fuga necessitatibus facilis voluptatum. Reprehenderit molestias velit architecto expedita nemo quas cumque ab non nam pariatur veniam, sit maxime corrupti dolorem sunt odio dicta!"
+    },
+    {
+      "id": 8,
+      "name": "Wireless Over-Ear Headphones – White Gold Edition",
+      "image": "../Images/tech/white headphones.jpg",
+      "price": 998.00,
+      "originalPrice": 1128.00,
+      "rating": 4.0,
+      "reviews": 7.5,
+      "orders": 154,
+      "freeShipping": true,
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste vel aspernatur aperiam in molestiae reiciendis, impedit deleniti consequuntur, eius, voluptates delectus esse ut tempora cumque harum fuga necessitatibus facilis voluptatum. Reprehenderit molestias velit architecto expedita nemo quas cumque ab non nam pariatur veniam, sit maxime corrupti dolorem sunt odio dicta!"
+    },
+    {
+      "id": 9,
+      "name": "Apple iPhone 12 – Red, 128GB, 5G",
+      "image": "../Images/tech/iphone red.jpg",
+      "price": 998.00,
+      "originalPrice": 1128.00,
+      "rating": 4.0,
+      "reviews": 7.5,
+      "orders": 154,
+      "freeShipping": true,
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste vel aspernatur aperiam in molestiae reiciendis, impedit deleniti consequuntur, eius, voluptates delectus esse ut tempora cumque harum fuga necessitatibus facilis voluptatum. Reprehenderit molestias velit architecto expedita nemo quas cumque ab non nam pariatur veniam, sit maxime corrupti dolorem sunt odio dicta!"
+    }
+  ]
+  
