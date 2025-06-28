@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"> </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Product Detail</title>
+  </head>
+  <body>
+    <style>
+      * {
+        font-family: "Inter", sans-serif;
+      }
+
+      @media (max-width: 768px) {
+        #desktop-header,
+        #desktop-nav,
+        #selected-category,
+        .container {
+          display: none;
+        }
+        #mobile-header {
+          display: flex;
+        }
+        #mobile-design {
+          display: block;
+        }
+      }
+    </style>
+
+    <header
+      class="w-full h-20 flex items-center justify-center border-b shadow-sm bg-white pl-20 pr-10"
+      id="desktop-header"
+    >
+    <!-- MOBILE WEB PAGE MENU BAR -->
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="block md:hidden">
+        <img
+          src="../Images/homepage/three lines all categories.png"
+          alt="Menu"
+          class="h-3"
+        />
+      </button>
+
+      <!-- Logo -->
+       <!-- HOME PAGE LINK -->
+      <a
+        href="../HTML/homepage.html"
+        class="flex items-center space-x-2 text-blue-600 font-bold text-xl ml-3 sm:ml-6"
+      >
+        <div class="bg-blue-100 p-2 rounded-lg">
+          <img
+            src="../Images/homepage/logo-symbol.png"
+            alt="Brand Logo"
+            class="h-6"
+          />
+        </div>
+        <span class="text-2xl sm:text-3xl">Brand</span>
+      </a>
+
+      <!-- Search Bar (Only for Larger Screens) -->
+      <div class="hidden md:flex flex-1 justify-center px-20">
+        <div
+          class="flex border-2 border-blue-500 rounded-lg overflow-hidden w-full max-w-xl"
+        >
+          <input
+            type="text"
+            placeholder="Search"
+            class="p-2 w-full outline-none border-none"
+          />
+          <select class="border-l px-2 text-gray-600 hidden md:block">
+            <option>All category</option>
+          </select>
+          <button class="bg-blue-600 text-white px-4 border-l border-blue-500">
+            Search
+          </button>
+        </div>
+      </div>
+
+      <!-- User Actions -->
+      <div class="hidden md:flex items-center space-x-4 text-gray-600">
+        <div class="flex flex-col items-center text-sm">
+          <img
+            src="../Images/homepage/Vector.png"
+            alt="Profile"
+            class="h-5"
+          />
+          <span>Profile</span>
+        </div>
+        <div class="flex flex-col items-center text-sm">
+          <img
+            src="../Images/homepage/message .png"
+            alt="Message"
+            class="h-5"
+          />
+          <span>Message</span>
+        </div>
+        <div class="flex flex-col items-center text-sm">
+          <img
+            src="../Images/homepage/heart.png"
+            alt="Orders"
+            class="h-5"
+          />
+          <span>Orders</span>
+        </div>
+        <div class="flex flex-col items-center text-sm">
+          <!-- CART LINK PAGE -->
+            <a href="../HTML/Cart.html">
+
+           
+          <img
+            src="../Images/homepage/cart.png"
+            alt="Cart"
+            class="h-5"
+          />
+          <span>My cart</span>
+           </a>
+        </div>
+      </div>
+
+<!-- MOBILE WEB PAGE HEADER -->
+      <!-- Mobile Cart & Profile (Aligned to Right) -->
+      <div class="md:hidden flex items-center space-x-4 ml-auto">
+        <!-- <a href="/public/Pages/Cart.html">iaudu</a> -->
+        <img
+          src="../Images/homepage/cart.png"
+          alt="Cart"
+          class="h-6"
+        />
+        <img
+          src="../Images/homepage/Vector.png"
+          alt="Profile"
+          class="h-6"
+        />
+      </div>
+    </header>
+
+<!-- MOBILE WEB PAGE : HEADER -->
+    <!-- Alternate header for mobile design -->
+    <header
+      class="hidden flex flex-col w-full px-4 py-6 border-b bg-white gap-4"
+      id="mobile-header"
+    >
+      <!-- Top Section -->
+      <div class="flex justify-between items-center w-full">
+        <!-- Left side -->
+        <div class="flex items-center space-x-2">
+          <a href="../HTML/homepage.html">
+            <img
+              src="../Images/MOBILE WEB IMAGES/back.png"
+              alt="Back"
+              class="h-5"
+            />
+          </a>
+        </div>
+
+        <!-- Right side -->
+        <div class="flex items-center space-x-4">
+          <!-- CART HTML LINK -->
+          <a href="../HTML/Cart.html">
+
+          
+          <img
+            src="../Images/homepage/cart.png"
+            alt="Cart"
+            class="h-5 cursor-pointer"
+          />
+        </a>
+          <img
+            src="../Images/homepage/Vector.png"
+            alt="Profile"
+            class="h-5 cursor-pointer"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav
+      class="hidden md:flex w-full items-center justify-between py-2 text-gray-700 border-b pl-20 pr-20 bg-white"
+      id="desktop-nav"
+    >
+      <div
+        class="flex space-x-4 font-semibold text-md overflow-x-auto md:overflow-visible whitespace-nowrap"
+      >
+        <button class="flex items-center space-x-5">
+          <img
+            src="../Images/homepage/three lines all categories.png"
+            alt="Menu"
+            class="h-4"
+          />
+          <span>All category</span>
+        </button>
+        <a href="#">Hot offers</a>
+        <a href="#">Gift boxes</a>
+        <a href="#">Projects</a>
+        <a href="#">Menu item</a>
+        <div class="relative">
+          <button class="flex items-center space-x-1">
+            <span>Help</span>
+            <img
+              src="../Images/homepage/dropdown.png"
+              alt="▼"
+              class="h-3"
+            />
+          </button>
+        </div>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-4 text-sm font-semibold">
+        <select class="text-gray-600">
+          <option>English, USD</option>
+        </select>
+        <div class="flex items-center space-x-1">
+          <span>Ship to</span>
+          <img
+            src="../Images/homepage/Property 1=DE.png"
+            alt="DE"
+            class="h-4"
+          />
+        </div>
+      </div>
+    </nav>
+
+    <!-- header for current selected category (e.g. Mobile accessory) -->
+    <div class="pl-20 h-[64px] flex" id="selected-category">
+      <nav class="flex items-center space-x-2 text-sm text-[#8B96A5]">
+        <a href="../HTML/homepage.html" class="hover:text-blue-500">Home</a>
+        <span> > </span>
+        <a href="#" class="hover:text-blue-500">Tech</a>
+        <span>></span>
+        <a href="#" class="hover:text-blue-500">Electronic</a>
+        <span>></span>
+        <a href="#" class="hover:text-blue-500">Computing & Mobile</a>
+      </nav>
+    </div>
+
+    <!-- Section for product detail -->
+
+    <section
+      class="container w-[1180px] h-[580px] m-auto rounded-md mb-10 flex gap-2 justify-between border border-gray-300 shadow-md shadow-gray-200"
+    >
+      <div
+        class="product-image h-[380px] w-[380px] border-2 rounded-md flex justify-center items-center flex-col m-4"
+      >
+        <img id="productImage" class="w-4/5 h-4/5" />
+      </div>
+      <div class="product-details h-11/12 w-1/3">
+        <div class="flex items-center">
+          <img src="../Images/MOBILE WEB IMAGES/check.png" class="h-6" />
+          <p class="text-[#00B517]">In stock</p>
+        </div>
+        <div class="w-full">
+          <!-- Heading -->
+          <h1 id="productName" class="font-semibold text-[20px] block"></h1>
+
+          <!-- Rating, Score, and Icon in One Line -->
+          <div class="flex items-center gap-1 mt-1">
+            <span class="text-orange-400">★★★★</span>
+            <span class="text-gray-400">★</span>
+            <span id="productReviews" class="text-orange-400"></span>
+            <img
+              src="../Images/MOBILE WEB IMAGES/full-stop.png"
+              class="h-8 w-8"
+            />
+            <img
+              src="../Images/MOBILE WEB IMAGES/comment.png"
+              class="h-4 w-4"
+            />
+            <span class="text-gray-500">32 reviews</span>
+            <img
+              src="../Images/MOBILE WEB IMAGES/full-stop.png"
+              class="h-8 w-8"
+            />
+            <img src="../Images/MOBILE WEB IMAGES/bag.png" class="h-4 w-4" />
+            <span id="productOrders" class="text-gray-500"></span>
+          </div>
+          <div
+            class="trade-price w-full flex justify-center items-center h-20 bg-[#FFF0DF]"
+          >
+            <div class="w-1/3 border-r-2 border-gray-200 ml-4 flex flex-col">
+              <h1
+                id="originalPrice1"
+                class="font-semibold text-[#FA3434] text-lg"
+              ></h1>
+              <span class="text-[#606060] text-xs">50-100 pcs</span>
+            </div>
+            <div class="w-1/3 border-r-2 border-gray-200 flex flex-col ml-2">
+              <h1 id="originalPrice2" class="font-semibold text-lg"></h1>
+              <span class="text-[#606060] text-xs">100-700 pcs</span>
+            </div>
+            <div class="w-1/3 py-4 flex flex-col ml-2">
+              <h1 id="discountedPrice" class="font-semibold text-lg"></h1>
+              <span class="text-[#606060] text-xs">700+ pcs</span>
+            </div>
+          </div>
+          <table class="w-full text-gray-700 mt-4 text-base ml-2">
+            <tbody>
+              <tr class="border-gray-300 border-b">
+                <td class="text-gray-400 py-3 px-2 w-1/4">Price:</td>
+                <td class="font-medium py-3 px-2 pl-8">Negotiable</td>
+                <!-- <hr> -->
+              </tr>
+              <tr>
+                <td class="text-gray-400 py-3 px-2">Type:</td>
+                <td class="font-medium py-3 px-2 pl-8">Electronics</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400 py-3 px-2">Material:</td>
+                <td class="font-medium py-3 px-2 pl-8">Durable, aluminum alloy, and tempered glass</td>
+              </tr>
+              <tr class="border-b border-gray-300">
+                <td class="text-gray-400 py-3 px-2">Design:</td>
+                <td class="font-medium py-3 px-2 pl-8">Modern and sleek</td>
+              </tr>
+              <tr>
+                <td class="text-gray-400 py-3 px-2 align-top">
+                  Customization:
+                </td>
+                <td class="font-medium py-3 px-2 pl-8">
+                  Customized logo and <br />
+                  design custom packages
+                </td>
+              </tr>
+              <tr>
+                <td class="text-gray-400 py-3 px-2">Protection:</td>
+                <td class="font-medium py-3 px-2 pl-8">Covered by refund policy</td>
+              </tr>
+              <tr class="border-b border-gray-300">
+                <td class="text-gray-400 py-3 px-2 border-b border-gray-300">
+                  Warranty:
+                </td>
+                <td class="font-medium py-3 px-2 pl-8">
+                  2 years full warranty
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Supplier Card Start -->
+      <div class="supplier-container m-8">
+        <div class="w-72 bg-white border border-gray-200 rounded-md p-4 h-fit">
+          <!-- Supplier Info -->
+          <div class="flex items-center gap-3 border-b pb-3">
+            <div
+              class="w-10 h-10 bg-blue-100 flex items-center justify-center rounded-md text-lg font-bold text-gray-600"
+            >
+              R
+            </div>
+            <div>
+              <h3 class="text-gray-800 font-semibold text-base">Supplier</h3>
+              <p class="text-gray-700 text-sm">Guanjoi Trading LLC</p>
+            </div>
+          </div>
+
+          <!-- Location & Verification -->
+          <div class="py-3 space-y-2">
+            <div class="flex items-center gap-4 text-gray-500 text-sm">
+              <img
+                src="../Images/homepage/Property 1=DE.png"
+                class="w-6 h-4"
+                alt="Germany Flag"
+              />
+              <span>Germany, Berlin</span>
+            </div>
+            <div class="flex items-center gap-6 text-gray-500 text-sm">
+              <img
+                src="../Images/MOBILE WEB IMAGES/verified.png"
+                class="w-4 h-4"
+                alt="Verified Icon"
+              />
+              <span>Verified Seller</span>
+            </div>
+            <div class="flex items-center gap-6 text-gray-500 text-sm">
+              <img
+                src="../Images/MOBILE WEB IMAGES/globe.png"
+                class="w-4 h-4"
+                alt="Globe Icon"
+              />
+              <span>Worldwide shipping</span>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <button
+            class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition text-base"
+          >
+            Send inquiry
+          </button>
+          <button
+            class="w-full border border-gray-300 text-blue-600 py-2 rounded-md mt-2 hover:bg-gray-100 transition"
+          >
+            Seller’s profile
+          </button>
+        </div>
+        <!-- Save for later -->
+        <div
+          class="flex justify-center items-center text-blue-600 mt-3 text-sm font-medium cursor-pointer hover:text-blue-700"
+        >
+        <button class="flex gap-2 items-center p-4">
+            <img src="../Images/MOBILE WEB IMAGES/heart2.png" class="h-5">
+            <span>Save for later</span>
+        </button>
+        <button id="addToCartBtn" class="flex gap-2 items-center p-4">
+            <img src="../Images/homepage/cart.png" class="h-5">
+            <span>Add to cart</span>
+        </button>
+        
+        </div>
+      </div>
+
+      <!-- Supplier Card End -->
+    </section>
+
+    <!-- Product Description Section -->
+
+    <section class="container p-4 flex m-auto gap-4 w-[1210px]">
+      <!-- Left Column -->
+      <div
+        class="w-[80%] bg-white p-4 shadow-md border border-gray-300 rounded-md"
+      >
+        <div class="border-b flex gap-6 text-gray-500">
+          <button
+            class="tab-btn text-blue-500 font-semibold border-b-2 border-blue-500 px-4 py-2"
+            data-tab="description"
+          >
+            Description
+          </button>
+          <button class="tab-btn px-4 py-2" data-tab="reviews">Reviews</button>
+          <button class="tab-btn px-4 py-2" data-tab="shipping">
+            Shipping
+          </button>
+          <button class="tab-btn px-4 py-2" data-tab="about">
+            About seller
+          </button>
+        </div>
+
+        <div class="tab-content mt-4" id="description">
+          <p id="productDescription" class="text-gray-700"></p>
+
+          <table class="w-4/5 mt-4 border-collapse border border-gray-300">
+            <tr>
+              <td class="border border-gray-300 p-2 bg-gray-100">Model</td>
+              <td class="border border-gray-300 p-2">#8786867</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 p-2 bg-gray-100">Style</td>
+              <td class="border border-gray-300 p-2">Classic style</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 p-2 bg-gray-100">
+                Certificate
+              </td>
+              <td class="border border-gray-300 p-2">ISO-898921212</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 p-2 bg-gray-100">Size</td>
+              <td class="border border-gray-300 p-2">34mm x 450mm x 19mm</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 p-2 bg-gray-100">Memory</td>
+              <td class="border border-gray-300 p-2">36GB RAM</td>
+            </tr>
+          </table>
+
+          <ul class="my-6">
+            <li class="flex items-center gap-2">
+              <img
+                src="../Images/MOBILE WEB IMAGES/check.png"
+                class="grayscale h-8"
+              />
+              <span class="text-gray-600">Lorem ipsum dolor sit amet.</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <img
+                src="../Images/MOBILE WEB IMAGES/check.png"
+                class="grayscale h-8"
+              />
+              <span class="text-gray-600">Lorem ipsum dolor sit amet.</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <img
+                src="../Images/MOBILE WEB IMAGES/check.png"
+                class="grayscale h-8"
+              />
+              <span class="text-gray-600">Lorem ipsum dolor sit amet.</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <img
+                src="../Images/MOBILE WEB IMAGES/check.png"
+                class="grayscale h-8"
+              />
+              <span class="text-gray-600">Lorem ipsum dolor sit amet.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content mt-4 hidden" id="reviews">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+            ducimus cumque, reprehenderit exercitationem, in sunt animi est sint
+            accusamus optio amet molestias dolor? Similique architecto soluta
+            quisquam placeat necessitatibus quo qui pariatur vero labore.
+            Possimus laborum dolores dignissimos provident optio tempore
+            asperiores voluptates quis obcaecati reiciendis et cupiditate
+            blanditiis ipsa porro veniam, officiis in consectetur dolor vero
+            sunt odio amet recusandae. Eum placeat dicta minima eligendi quaerat
+            perferendis eos, vel sapiente aspernatur tempora explicabo ut odit
+            eveniet nesciunt ratione excepturi, omnis consectetur blanditiis
+            commodi et debitis nam provident est? Eaque quod est, placeat odit
+            perferendis optio facilis architecto possimus error.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Column (You may like) -->
+      <div
+        class="w-[30%] bg-white p-4 shadow-md border border-gray-300 rounded-md h-fit"
+      >
+        <h2 class="font-semibold text-lg mb-4">You may like</h2>
+        <div class="space-y-6">
+          <!-- Product 1 -->
+          <div class="flex items-center gap-4">
+            <img
+              src="../Images/cloth/blue coat.jpg"
+              class="w-16 h-16 object-cover rounded-md border rounded-lg"
+              alt="Product"
+            />
+            <div class="flex-1">
+              <p class="text-gray-800 font-medium leading-tight">
+                The "Azure Elegance" Modern Fit Blazer
+              </p>
+              <p class="text-blue-500 text-sm font-semibold">$7.00 - $99.50</p>
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="flex items-center gap-4">
+            <img
+              src="../Images/cloth/grey polo shirt.jpg"
+              class="w-16 h-16 object-cover rounded-md border rounded-lg"
+              alt="Product"
+            />
+            <div class="flex-1">
+              <p class="text-gray-800 font-medium leading-tight">
+                "Coastal Breeze" Short-Sleeved Polo Shirt
+              </p>
+              <p class="text-blue-500 text-sm font-semibold">$7.00 - $99.50</p>
+            </div>
+          </div>
+          <!-- Product 3 -->
+          <div class="flex items-center gap-4">
+            <img
+              src="../Images/cloth/brown jacket.jpg"
+              class="w-16 h-16 object-cover rounded-md border rounded-lg"
+              alt="Product"
+            />
+            <div class="flex-1">
+              <p class="text-gray-800 font-medium leading-tight">
+                "Urban Explorer" Water-Resistant Hooded Jacket
+              </p>
+              <p class="text-blue-500 text-sm font-semibold">$7.00 - $99.50</p>
+            </div>
+          </div>
+          <!-- Product 4 -->
+          <div class="flex items-center gap-4">
+            <img
+              src="../Images/cloth/bluer polo .jpg"
+              class="w-16 h-16 object-cover rounded-md border rounded-lg"
+              alt="Product"
+            />
+            <div class="flex-1">
+              <p class="text-gray-800 font-medium leading-tight">
+                "Vibrant Blue" Performance Polo Shirt
+              </p>
+              <p class="text-blue-500 text-sm font-semibold">$7.00 - $99.50</p>
+            </div>
+          </div>
+          <!-- Product 5 -->
+          <div class="flex items-center gap-4">
+            <img
+              src="../Images/cloth/blue bag.jpg"
+              class="w-16 h-16 object-cover rounded-md border rounded-lg"
+              alt="Product"
+            />
+            <div class="flex-1">
+              <p class="text-gray-800 font-medium leading-tight">
+                Denim Drift Bag
+              </p>
+              <p class="text-blue-500 text-sm font-semibold">$7.00 - $99.50</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile Product Card Section -->
+    <section
+      class="max-w-sm w-full bg-white border border-gray-300 rounded-lg shadow-md p-4 mx-auto hidden"
+      id="mobile-design"
+    >
+      <!-- Product Image -->
+      <div
+        class="relative w-full h-56 rounded-lg flex items-center justify-center"
+      >
+        <img
+          src="../Images/cloth/grey polo shirt.jpg"
+          alt="Product Image"
+          class="h-full object-contain"
+        />
+      </div>
+
+      <!-- Rating and Reviews -->
+      <div class="flex items-center justify-between mt-3">
+        <div class="flex items-center space-x-1">
+          <span class="text-orange-400 text-sm">★★★★</span>
+          <span class="text-gray-500 text-sm"> 32 reviews • 154 sold</span>
+        </div>
+      </div>
+
+      <!-- Product Name & Price -->
+      <h2 class="font-semibold text-base mt-1">Product name goes here</h2>
+      <p class="text-red-500 font-bold text-lg">
+        $129.95 <span class="text-gray-500 text-sm">(50–100 pcs)</span>
+      </p>
+
+      <!-- Inquiry Button -->
+      <button
+        class="w-full bg-blue-600 text-white font-medium py-2 rounded-md mt-2"
+      >
+        Send Inquiry
+      </button>
+      <button id="addToCartBtn2" class="flex gap-2 items-center p-4">
+        <img src="../Images/homepage/cart.png" class="h-5">
+        <span>Add to cart</span>
+    </button>
+
+      <!-- Product Details -->
+      <div class="mt-4 border-t pt-3 space-y-2 text-sm">
+        <div class="flex justify-between">
+          <span class="text-gray-500">Condition</span>
+          <span class="text-black">Brand new</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-gray-500">Material</span>
+          <span class="text-black">Plastic</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-gray-500">Category</span>
+          <span class="text-black">Electronics, gadgets</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-gray-500">Item num</span>
+          <span class="text-black">23421</span>
+        </div>
+      </div>
+
+      <!-- Product Description -->
+      <p class="text-gray-600 text-sm mt-3 leading-tight">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis voluptatibus placeat culpa mollitia laboriosam! Esse accusamus, libero quidem modi neque, doloremque obcaecati natus qui possimus, consequatur reiciendis fugit corrupti ad.
+      </p>
+      <a href="#" class="text-blue-600 text-sm font-medium">Read more</a>
+
+      <!-- Supplier Section -->
+      <div class="my-8 border rounded-md py-3 pl-3 flex items-center space-x-3">
+        <div
+          class="bg-blue-100 text-blue-600 font-bold w-10 h-10 flex items-center justify-center rounded-md"
+        >
+          R
+        </div>
+        <div>
+          <p class="text-sm font-medium">Supplier</p>
+          <p class="text-gray-500 text-sm">Guanjoi Trading LLC</p>
+        </div>
+      </div>
+
+      <!-- Supplier Details -->
+      <div class="flex justify-between mt-3 text-gray-600 text-sm">
+        <div class="flex items-center space-x-1">
+          <img src="../Images/homepage/Property 1=DE.png" class="w-4 h-4" />
+          <span>Germany</span>
+        </div>
+        <div class="flex items-center space-x-1">
+          <img src="../Images/MOBILE WEB IMAGES/verified.png" class="w-4 h-4" />
+          <span>Verified</span>
+        </div>
+        <div class="flex items-center space-x-1">
+          <img src="../Images/MOBILE WEB IMAGES/globe.png" class="w-4 h-4" />
+          <span>Shipping</span>
+        </div>
+      </div>
+    </section>
+
+ <!-- SHOP NOW SECTION -->
+ <section class="max-w-[1180px] mx-auto relative h-auto bg-gradient-to-r from-blue-600 to-blue-500 rounded-md overflow-hidden py-6 px-8 flex items-center justify-between bg-cover bg-center" style="background-image: url('../Images/bg-images/form-upper.png');">
+  <div class="text-white">
+    <h2 class="text-xl font-semibold">Super discount on more than 100 USD</h2>
+    <p class="text-sm mt-1">Have you ever finally just write dummy info</p>
+  </div>
+  <button class="bg-orange-500 text-white py-2 px-4 rounded-md text-sm hover:bg-orange-600 transition-colors">Shop now</button>
+</section>
+<br>
+     <!-- Footer -->
+    <footer class="bg-gray-100 text-gray-600 text-sm">
+      <div class="max-w-7xl mx-auto py-8 px-4 text-center border-b">
+        <h3 class="font-semibold text-lg text-gray-900">
+          Subscribe on our newsletter
+        </h3>
+        <p class="text-gray-500 text-base mb-4">
+          Get daily news on upcoming offers from many suppliers all over the
+          world
+        </p>
+        <div class="flex justify-center items-center gap-2">
+          <input
+            type="email"
+            placeholder="Email"
+            class="px-4 py-2 border rounded-lg w-72 focus:outline-none"
+          />
+          <button class="bg-blue-600 text-white px-6 py-2 rounded-lg">
+            Subscribe
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-6 py-8 px-4"
+      >
+        <div>
+          <div class="flex items-center gap-2">
+            <img src="../Images/homepage/logo-symbol.png" alt="" />
+            <span class="text-3xl font-bold text-blue-500">Brand</span>
+          </div>
+          <p class="text-gray-500 text-base mt-2">
+            Best information about the company goes here but now lorem ipsum is
+          </p>
+          <div class="flex gap-3 mt-4">
+            <img
+              src="../Images/socials/facebook.png"
+              alt="Facebook"
+              class="h-8"
+            />
+            <img
+              src="../Images/socials/twitter.png"
+              alt="Twitter"
+              class="h-8"
+            />
+            <img
+              src="../Images/socials/linkedin.png"
+              alt="LinkedIn"
+              class="h-8"
+            />
+            <img
+              src="../Images/socials/instagram.png"
+              alt="Instagram"
+              class="h-8"
+            />
+            <img
+              src="../Images/socials/youtube.png"
+              alt="YouTube"
+              class="h-8"
+            />
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-gray-900 text-base">About</h4>
+          <ul class="text-gray-500 text-base space-y-2 mt-2">
+            <li>About Us</li>
+            <li>Find store</li>
+            <li>Categories</li>
+            <li>Blogs</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-gray-900 text-base">Partnership</h4>
+          <ul class="text-gray-500 text-base space-y-2 mt-2">
+            <li>About Us</li>
+            <li>Find store</li>
+            <li>Categories</li>
+            <li>Blogs</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-gray-900 text-base">For users</h4>
+          <ul class="text-gray-500 text-base space-y-2 mt-2">
+            <li>Login</li>
+            <li>Register</li>
+            <li>Settings</li>
+            <li>My Orders</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-gray-900 text-base">Get app</h4>
+          <div class="mt-2 space-y-2">
+            <img
+              src="../Images/homepage/apple.png"
+              alt="App Store"
+              class="w-32 rounded-md"
+            />
+            <img
+              src="../Images/homepage/type=Google Play.png"
+              alt="Google Play"
+              class="w-32 rounded-md"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="border-t py-7 text-center flex justify-between items-center px-20"
+      >
+        <p class="text-base">&copy; 2023 Ecommerce.</p>
+        <div class="flex items-center gap-2">
+          <img
+            src="../Images/homepage/Property 1=US.png"
+            alt=""
+            class="h-6"
+          />
+          <span>English</span>
+          <img
+            src="../Images/socials/upload.png"
+            alt=""
+            class="h-2"
+          />
+        </div>
+      </div>
+    </footer>
+    <script src="../JS/product-detail.js"></script>
+    <script>
+      document.querySelectorAll(".tab-btn").forEach((button) => {
+        button.addEventListener("click", function () {
+          document
+            .querySelectorAll(".tab-btn")
+            .forEach((btn) =>
+              btn.classList.remove(
+                "text-blue-500",
+                "font-semibold",
+                "border-b-2",
+                "border-blue-500"
+              )
+            );
+          this.classList.add(
+            "text-blue-500",
+            "font-semibold",
+            "border-b-2",
+            "border-blue-500"
+          );
+
+          document
+            .querySelectorAll(".tab-content")
+            .forEach((tab) => tab.classList.add("hidden"));
+          document.getElementById(this.dataset.tab).classList.remove("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>
+
