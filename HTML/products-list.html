@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+</head>
+<style>
+    * {
+      font-family: "Inter", sans-serif;
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+    }
+
+    .bounce {
+        animation: bounce 0.4s ease;
+    }
+
+    @media (max-width:768px){
+        #desktop-header, #desktop-nav, #selected-category, aside, #filter-desktop, .product p, .product button{
+            display: none;
+        }
+        #mobile-header{
+            display: flex;
+        }
+        .free-ship{
+            /* display: block; */
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+   /* Grid Layout */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-layout .product {
+    width: 100%;
+    height: auto;
+    flex-direction: column; /* Stack content vertically */
+}
+
+.grid-layout .product img {
+    width: 100%; /* Make images responsive in grid view */
+    height: auto;
+}
+
+/* Grid Layout */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 16px; /* Slightly smaller gap */
+}
+
+.grid-layout .product {
+    width: 100%; /* Let grid handle width */
+    height: auto;
+    flex-direction: column; /* Stack content vertically */
+    padding: 12px; /* Reduce padding */
+}
+
+/* Reduce product image size */
+.grid-layout .product img {
+    width: 200px; /* Make images responsive in grid view */
+    height: 200px; /* Fixed smaller height */
+    object-fit: cover;
+    border-radius: 8px; /* Keep rounded corners consistent */
+    margin: auto;
+}
+
+/* Adjust font sizes for grid view */
+.grid-layout .product h2 {
+    font-size: 14px; /* Smaller heading */
+    line-height: 18px;
+}
+
+.grid-layout .product span {
+    font-size: 12px; /* Smaller price and details */
+}
+
+/* Hide description in grid view */
+.grid-layout .product p {
+    display: none;
+}
+
+/* Highlight the clicked icon */
+#grid-icon.active,
+#menu-icon.active {
+    border-color: #007bff;
+    background-color: #f0f9ff;
+}
+
+/* Adjust heart icon size */
+.grid-layout .heart-btn {
+    width: 28px;
+    height: 28px;
+}
+
+.grid-layout .heart-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+
+
+/* Highlight the clicked icon */
+#grid-icon.active,
+#menu-icon.active {
+    border-color: #007bff;
+    background-color: #f0f9ff;
+}
+.grid-view .product p {
+    display: none;
+}
+
+
+  </style>
+<body class="bg-[#F7F8F9] overflow-x-hidden h-[100%]">
+    
+    <header
+    class="w-full h-20 flex items-center justify-center border-b shadow-sm bg-white pl-20 pr-10 " id="desktop-header"
+  >
+  <!-- MOBILE MENU OPTION -->
+    <!-- Mobile Menu Button -->
+    <button id="menu-btn" class="block md:hidden">
+      <img
+        src="../Images/homepage/three lines all categories.png"
+        alt="Menu"
+        class="h-3"
+      />
+    </button>
+
+    <!-- Logo -->
+    <a href="/public/home.html" class="flex items-center space-x-2 text-blue-600 font-bold text-xl ml-3 sm:ml-6">
+        <div class="bg-blue-100 p-2 rounded-lg">
+          <img
+            src="../Images/homepage/logo-symbol.png"
+            alt="Brand Logo"
+            class="h-6"
+          />
+        </div>
+        <span class="text-2xl sm:text-3xl">Brand</span>
+      </a>
+      
+
+    <!-- Search Bar (Only for Larger Screens) -->
+    <div class="hidden md:flex flex-1 justify-center px-20">
+      <div
+        class="flex border-2 border-blue-500 rounded-lg overflow-hidden w-full max-w-xl"
+      >
+        <input
+          type="text"
+          placeholder="Search"
+          class="p-2 w-full outline-none border-none"
+        />
+        <select class="border-l px-2 text-gray-600 hidden md:block">
+          <option>All category</option>
+        </select>
+        <button class="bg-blue-600 text-white px-4 border-l border-blue-500">
+          Search
+        </button>
+      </div>
+    </div>
+
+    <!-- User Actions -->
+    <div class="hidden md:flex items-center space-x-4 text-gray-600">
+      <div class="flex flex-col items-center text-sm">
+        <img
+          src="../Images/homepage/Vector.png"
+          alt="Profile"
+          class="h-5"
+        />
+        <span>Profile</span>
+      </div>
+      <div class="flex flex-col items-center text-sm">
+        <img
+          src="../Images/homepage/message .png"
+          alt="Message"
+          class="h-5"
+        />
+        <span>Message</span>
+      </div>
+      <div class="flex flex-col items-center text-sm">
+        <img
+          src="../Images/homepage/heart.png"
+          alt="Orders"
+          class="h-5"
+        />
+        <span>Orders</span>
+      </div>
+      <div class="flex flex-col items-center text-sm">
+        <a href="../HTML/Cart.html" class="flex flex-col justify-center items-center">
+          <img
+            src="../Images/homepage/cart.png"
+            alt="Cart"
+            class="h-5"
+          />
+          <span>My cart</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- MOBILE CART AND PROFILE OPTION -->
+    <!-- Mobile Cart & Profile (Aligned to Right) -->
+    <div class="md:hidden flex items-center space-x-4 ml-auto">
+      <img
+        src="../Images/homepage/cart.png"
+        alt="Cart"
+        class="h-6"
+      />
+      <img
+        src="../Images/homepage/Vector.png"
+        alt="Profile"
+        class="h-6"
+      />
+    </div>
+  </header>
+
+<!-- HEADER FOR MOBILE -->
+  <!-- Alternate header for mobile design -->
+  <header class="hidden flex flex-col w-full px-4 py-6 border-b bg-white gap-4" id="mobile-header">
+    <!-- Top Section -->
+    <div class="flex justify-between items-center w-full">
+      <!-- Left side -->
+      <div class="flex items-center space-x-2">
+        <a href="../HTML/homepage.html">
+          <img src="../Images/MOBILE WEB IMAGES/back.png" alt="Back" class="h-5">
+        </a>
+        <span class="font-semibold text-gray-800">Mobile accessory</span>
+      </div>
+    
+      <!-- Right side -->
+      <div class="flex items-center space-x-4">
+        <img src="../Images/homepage/cart.png" alt="Cart" class="h-5 cursor-pointer">
+        <img src="../Images/homepage/Vector.png" alt="Profile" class="h-5 cursor-pointer">
+      </div>
+    </div>
+  
+    <!-- Search Bar -->
+    <div class="w-full mt-2">
+      <input 
+        type="search" 
+        placeholder="Search..." 
+        class="w-full border border-gray-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#F7F8F9]"
+      />
+    </div>
+    <div class="flex gap-2">
+        <span class="w-auto bg-gray-200 text-[#0D6EFD] rounded-md p-2">Tablets</span>
+        <span class="w-auto bg-gray-200 text-[#0D6EFD] rounded-md p-2">Phones</span>
+        <span class="w-auto bg-gray-200 text-[#0D6EFD] rounded-md p-2">Ipads</span>
+        <span class="w-auto bg-gray-200 text-[#0D6EFD] rounded-md p-2">Ipods</span>
+        <span class="w-auto bg-gray-200 text-[#0D6EFD] rounded-md p-2">Gadgets</span>
+        
+    </div>
+
+    <!-- MOBILE PAGE : OPTIONS -->
+    <div class="flex justify-around items-center ">
+        <button class="flex items-center  bg-white border-2 border-[#0D6EFD] rounded-md p-2 text-gray-800 gap-2">Sort: Newest<img src="../Images/MOBILE WEB IMAGES/menu3.png" class="h-4"/> </button>
+        
+        <button class="flex items-center bg-white border-2 border-[#0D6EFD] rounded-md p-2 text-gray-800 gap-2">Filter (3)<img src="../Images/MOBILE WEB IMAGES/filter.png" class="h-4"/> </button>
+        <img src="../Images/MOBILE WEB IMAGES/grid.png" alt="Grid" class="h-8 object-contain cursor-pointer border-2 rounded-lg p-[5px]">
+        <img src="../Images/homepage/three lines all categories.png" alt="Menu" class="h-8 object-contain cursor-pointer border-2 rounded-lg p-[5px] bg-gray-200">
+    </div>
+  </header>
+  
+  
+
+<!-- WEB PAGE -->
+  <!-- Navigation Bar -->
+  <nav
+    class="hidden md:flex w-full items-center justify-between  py-2 text-gray-700 border-b pl-20 pr-20 bg-white"
+    id="desktop-nav"
+  >
+    <div
+      class="flex space-x-4 font-semibold text-md overflow-x-auto md:overflow-visible whitespace-nowrap"
+    >
+      <button class="flex items-center space-x-5">
+        <img
+          src="../Images/homepage/three lines all categories.png"
+          alt="Menu"
+          class="h-4"
+        />
+        <span>All category</span>
+      </button>
+      <a href="#">Hot offers</a>
+      <a href="#">Gift boxes</a>
+      <a href="#">Projects</a>
+      <a href="#">Menu item</a>
+      <div class="relative">
+        <button class="flex items-center space-x-1">
+          <span>Help</span>
+          <img
+            src="../Images/homepage/dropdown.png"
+            alt="▼"
+            class="h-3"
+          />
+        </button>
+      </div>
+    </div>
+
+    <div class="hidden md:flex items-center space-x-4 text-sm font-semibold">
+      <select class="text-gray-600">
+        <option>English, USD</option>
+      </select>
+      <div class="flex items-center space-x-1">
+        <span>Ship to</span>
+        <img
+          src="../Images/homepage/Property 1=DE.png"
+          alt="DE"
+          class="h-4"
+        />
+      </div>
+    </div>
+  </nav>
+
+  <!-- header for current selected category (e.g. Mobile accessory) -->
+  <div class=" pl-20 h-[64px] flex" id="selected-category">
+    <nav class="flex items-center space-x-2 text-sm text-[#8B96A5]">
+      <a href="/public/Pages/home.html" class="hover:text-blue-500">Home</a>
+      <span> > </span>
+      <a href="#" class="hover:text-blue-500">Tech</a>
+      <span>></span>
+      <a href="#" class="hover:text-blue-500">Electronics</a>
+      <span>></span>
+      <a href="#" class="hover:text-blue-500">Computing & Mobile</a>
+    </nav>
+  </div>
+  <div class="container flex gap-6">
+
+
+  <!-- Aside for filters / options -->
+  <aside class="w-[240px] ml-20  text-[16px] min-h-screen">
+    <!-- Category -->
+    <div class="mb-6 pt-6 border-t-2">
+      <h3 class="font-semibold mb-2 flex justify-between items-center cursor-pointer toggle-heading">
+        Category
+        <img src="../Images/homepage/dropdown.png" class="toggle-icon w-4 h-4" alt="Toggle" />
+      </h3>
+      <ul class="space-y-1 toggle-content hidden">
+        <li><a href="#" class="text-gray-600 hover:text-blue-500">Mobile accessory</a></li>
+        <li><a href="#" class="text-gray-600 hover:text-blue-500">Electronics</a></li>
+        <li><a href="#" class="text-gray-600 hover:text-blue-500">Smartphones</a></li>
+        <li><a href="#" class="text-gray-600 hover:text-blue-500">Modern tech</a></li>
+        <li><a href="#" class="text-blue-500">See all</a></li>
+      </ul>
+    </div>
+  
+    <!-- Brands -->
+    <div class="mb-6 mb-6 pt-6 border-t-2">
+      <h3 class="font-semibold mb-2 flex justify-between items-center cursor-pointer toggle-heading">
+        Brands
+        <img src="../Images/homepage/dropdown.png" class="toggle-icon w-4 h-4" alt="Toggle" />
+      </h3>
+      <ul class="space-y-1 toggle-content">
+        <li><input type="checkbox" id="samsung"  class="w-4 h-4 border-4 border-gray-600 bg-gray-200 mx-2"/> <label for="samsung">Samsung</label></li>
+        <li><input type="checkbox" id="apple"  class="w-4 h-4 border-4 border-gray-600 bg-gray-200 mx-2"/> <label for="apple">Apple</label></li>
+        <li><input type="checkbox" id="huawei"  class="w-4 h-4 border-4 border-gray-600 bg-gray-200 mx-2"/> <label for="huawei">Huawei</label></li>
+        <li><input type="checkbox" id="pocco"  class="w-4 h-4 border-4 border-gray-600 bg-gray-200 mx-2"/> <label for="pocco">Pocco</label></li>
+        <li><input type="checkbox" id="lenovo"  class="w-4 h-4 border-4 border-gray-600 bg-gray-200 mx-2"/> <label for="lenovo">Lenovo</label></li>
+        <li><a href="#" class="text-blue-500">See all</a></li>
+      </ul>
+    </div>
+  
+    <!-- Features -->
+    <div class="mb-6 mb-6 pt-6 border-t-2">
+      <h3 class="font-semibold mb-2 flex justify-between items-center cursor-pointer toggle-heading">
+        Features
+        <img src="../Images/homepage/dropdown.png" class="toggle-icon w-4 h-4" alt="Toggle" />
+      </h3>
+      <ul class="space-y-1 toggle-content hidden">
+        <li><input type="checkbox" id="metallic" class="w-4 h-4 border-4 border-gray-600 bg-gray-200 mx-2"class="w-4 h-4 border-4 border-gray-600 bg-gray-200"/> <label for="metallic">Metallic</label></li>
+        <li><input type="checkbox" id="plastic-cover" class="w-4 h-4 border-4 border-gray-600 bg-gray-200 mx-2"class="w-4 h-4 border-4 border-gray-600 bg-gray-200"/> <label for="plastic-cover">Plastic cover</label></li>
+        <li><input type="checkbox" id="8gb-ram" class="w-4 h-4 border-4 border-gray-600 bg-gray-200 mx-2"class="w-4 h-4 border-4 border-gray-600 bg-gray-200"/> <label for="8gb-ram">8GB Ram</label></li>
+        <li><input type="checkbox" id="super-power" class="w-4 h-4 border-4 border-gray-600 bg-gray-200 mx-2"class="w-4 h-4 border-4 border-gray-600 bg-gray-200"/> <label for="super-power">Super power</label></li>
+        <li><input type="checkbox" id="large-memory" class="w-4 h-4 border-4 border-gray-600 bg-gray-200 mx-2"class="w-4 h-4 border-4 border-gray-600 bg-gray-200"/> <label for="large-memory">Large Memory</label></li>
+        <li><a href="#" class="text-blue-500">See all</a></li>
+      </ul>
+    </div>
+  
+
+   <!-- Price Range -->
+<div class="mb-6 mb-6 pt-6 border-t-2">
+  <h3 class="font-semibold mb-2 flex justify-between items-center cursor-pointer toggle-heading">
+    Price range
+    <img src="../Images/homepage/dropdown.png" class="toggle-icon w-4 h-4" alt="Toggle" />
+  </h3>
+
+  <div class="toggle-content hidden">
+    <!-- Range Slider -->
+    <div class="relative w-full mb-6 mt-2">
+      <div class="relative h-1 bg-blue-200">
+        <div id="progress" class="absolute h-1 bg-blue-500"></div>
+
+        <input type="range" id="min-price" min="0" max="9999" value="0"
+          class="absolute w-full h-1 bg-transparent appearance-none pointer-events-none" />
+
+        <input type="range" id="max-price" min="0" max="9999" value="9999"
+          class="absolute w-full h-1 bg-transparent appearance-none pointer-events-none" />
+      </div>
+    </div>
+
+    <!-- Min/Max Inputs -->
+    <div class="flex justify-between items-center mb-4">
+      <div class="flex flex-col">
+        <label for="min-price-input" class="text-gray-500 mb-1">Min</label>
+        <input type="number" id="min-price-input" value="0"
+          class="border p-2 w-[100px] rounded-md text-center" />
+      </div>
+      <div class="flex flex-col">
+        <label for="max-price-input" class="text-gray-500 mb-1">Max</label>
+        <input type="number" id="max-price-input" value="999999"
+          class="border p-2 w-[100px] rounded-md text-center" />
+      </div>
+    </div>
+
+    <!-- Apply Button -->
+    <button class="w-full bg-blue-100 text-blue-500 font-semibold py-2 rounded-md hover:bg-blue-200">
+      Apply
+    </button>
+  </div>
+</div>
+
+    <!-- Condition -->
+    <div class="mb-6 mb-6 pt-6 ">
+      <h3 class="font-semibold mb-2 flex justify-between items-center cursor-pointer toggle-heading">
+        Condition
+        <img src="../Images/homepage/dropdown.png" class="toggle-icon w-4 h-4" alt="Toggle" />
+      </h3>
+      <ul class="space-y-1 toggle-content hidden">
+        <li><input type="radio" id="new" class="w-4 h-4 border-4 border-gray-600 bg-gray-200 mx-2"/> <label for="new">New</label></li>
+        <li><input type="radio" id="used" class="w-4 h-4 border-4 border-gray-600 bg-gray-200 mx-2"/> <label for="used">Used</label></li>
+        <li><input type="radio" id="refurbished" class="w-4 h-4 border-4 border-gray-600 bg-gray-200 mx-2"/> <label for="refurbished">Refurbished</label></li>
+      </ul>
+    </div>
+  
+    <!-- Rating -->
+    <div class="mb-6 mb-6 pt-6 border-t-2">
+      <h3 class="font-semibold mb-2 flex justify-between items-center cursor-pointer toggle-heading">
+        Rating
+        <img src="../Images/homepage/dropdown.png" class="toggle-icon w-4 h-4" alt="Toggle" />
+      </h3>
+      <ul class="space-y-1 toggle-content hidden">
+        <li>
+          <input type="checkbox" id="5-star" class="w-5 h-5 border border-gray-400 rounded focus:ring-blue-500 focus:ring-2 checked:bg-blue-500 checked:border-blue-500" />
+          <label for="5-star" class="ml-2 text-3xl">
+            <span class="text-yellow-400">★★★★★</span>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="4-star" class="w-5 h-5 border border-gray-400 rounded focus:ring-blue-500 focus:ring-2 checked:bg-blue-500 checked:border-blue-500" />
+          <label for="4-star" class="ml-2 text-3xl">
+            <span class="text-yellow-400">★★★★</span><span class="text-gray-400">★</span>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="3-star" class="w-5 h-5 border border-gray-400 rounded focus:ring-blue-500 focus:ring-2 checked:bg-blue-500 checked:border-blue-500" />
+          <label for="3-star" class="ml-2 text-3xl">
+            <span class="text-yellow-400">★★★</span><span class="text-gray-400">★★</span>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="2-star" class="w-5 h-5 border border-gray-400 rounded focus:ring-blue-500 focus:ring-2 checked:bg-blue-500 checked:border-blue-500" />
+          <label for="2-star" class="ml-2 text-3xl">
+            <span class="text-yellow-400">★★</span><span class="text-gray-400">★★★</span>
+          </label>
+        </li>
+        <li>
+          <input type="checkbox" id="1-star" class="w-5 h-5 border border-gray-400 rounded focus:ring-blue-500 focus:ring-2 checked:bg-blue-500 checked:border-blue-500" />
+          <label for="1-star" class="ml-2 text-3xl">
+            <span class="text-yellow-400">★</span><span class="text-gray-400">★★★★</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </aside>
+  
+  <section class="min-h-screen lg:w-[80%] w-full">
+    <div class="w-full flex items-center justify-between border-2 rounded-lg p-2 bg-white" id="filter-desktop">
+        <!-- Left Side -->
+        <span class="text-sm">
+            12,911 items in <strong>Mobile accessory</strong>
+        </span>
+    
+        <!-- Right Side -->
+        <div class="flex items-center gap-6">
+            <label for="Verified" class="flex items-center gap-2 text-sm">
+                <input type="checkbox" name="Verified" id="Verified" class="w-4 h-4 border border-gray-400 rounded">
+                Verified only
+            </label> 
+            <select name="options" id="options" class="border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-blue-400">
+                <option value="Featured">Featured</option>
+            </select>
+            <img src="../Images/MOBILE WEB IMAGES/grid.png" 
+     alt="Grid" 
+     id="grid-icon"
+     class="h-8 object-contain cursor-pointer border-2 rounded-lg p-[5px]">
+
+<img src="../Images/homepage/three lines all categories.png" 
+     alt="Menu" 
+     id="menu-icon"
+     class="h-8 object-contain cursor-pointer border-2 rounded-lg p-[5px] bg-gray-200">
+
+        </div>
+    </div>
+    
+<div id="product-container">
+
+
+    <!-- Product # 1 -->
+    <div class="w-full h-[230px] border border-gray-300 rounded-lg flex p-4 shadow-md relative bg-white lg:my-4 product">
+        <!-- Product Image -->
+        <img src="../Images/tech/camera.jpg" alt="Product" class="lg:w-[180px] lg:h-[180px] w-[98px] h-[98px] object-cover rounded-md">
+        
+        <!-- Product Details -->
+        <div class="ml-4 flex-1">
+            <h2 class="text-lg font-medium text-gray-800">
+                Canon Camera EOS 2000, Black 10x zoom
+            </h2>
+            <div class="mt-1 flex items-center">
+                <span class="text-xl font-bold text-black">$998.00</span>
+                <span class="text-gray-400 line-through ml-2">$1128.00</span>
+            </div>
+            <div class="flex items-center mt-1 flex-wrap">
+                <!-- Stars -->
+                <div class="flex items-center">
+                    <span class="text-orange-400">★★★★</span><span class="text-gray-400">★</span>
+                </div>
+                <span class="text-orange-400 text-sm ml-1">7.5</span>
+                <span class="text-gray-500 text-sm ml-2">• 154 orders</span>
+                <span class="text-green-500 text-sm ml-2 free-ship" >• Free Shipping</span>
+            </div>
+            <p class="text-gray-500 text-sm mt-2 w-[70%]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+            </p>
+           
+            <a href="../HTML/product-detail.html?id=5" class="text-blue-500 text-sm font-medium mt-2 inline-block">View details</a>
+
+        </div>
+    
+        <!-- Heart Icon at Top Right -->
+        <button class="heart-btn absolute top-2 right-2 border border-gray-300 rounded-md w-8 h-8 flex items-center justify-center shadow-sm hover:bg-gray-100 m-2">
+            <img src="../Images/MOBILE WEB IMAGES/heart2.png" alt="Heart Icon" class="heart-icon h-4 w-4">
+        </button>
+    </div>
+    <!-- Product # 2 -->
+    <div class="w-full h-[230px] border border-gray-300 rounded-lg flex p-4 shadow-md relative bg-white lg:my-4 product">
+        <!-- Product Image -->
+        <img src="../Images/tech/galaxy.jpg" alt="Product" class="lg:w-[180px] lg:h-[180px] w-[98px] h-[98px] object-cover rounded-md">
+        
+        <!-- Product Details -->
+        <div class="ml-4 flex-1">
+            <h2 class="text-lg font-medium text-gray-800">
+                Xiaomi Redmi Note 8 
+                <!-- <Prog>\479*</Prog> -->
+            </h2>         
+            <div class="mt-1 flex items-center">
+                <span class="text-xl font-bold text-black">$998.00</span>
+                <span class="text-gray-400 line-through ml-2">$1128.00</span>
+            </div>
+            <div class="flex items-center mt-1 flex-wrap">
+                <!-- Stars -->
+                <div class="flex items-center">
+                    <span class="text-orange-400">★★★★</span><span class="text-gray-400">★</span>
+                </div>
+                <span class="text-orange-400 text-sm ml-1">7.5</span>
+                <span class="text-gray-500 text-sm ml-2">• 154 orders</span>
+                <span class="text-green-500 text-sm ml-2 free-ship" >• Free Shipping</span>
+            </div>
+            <p class="text-gray-500 text-sm mt-2 w-[70%]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+            </p>
+            <a href="../HTML/product-detail.html?id=2" class="text-blue-500 text-sm font-medium mt-2 inline-block">View details</a>
+        </div>
+    
+        <!-- Heart Icon at Top Right -->
+        <button class="heart-btn absolute top-2 right-2 border border-gray-300 rounded-md w-8 h-8 flex items-center justify-center shadow-sm hover:bg-gray-100 m-2">
+            <img src="../Images/MOBILE WEB IMAGES/heart2.png" alt="Heart Icon" class="heart-icon h-4 w-4">
+        </button>
+    </div>
+    <!-- Product # 3 -->
+    <div class="w-full h-[230px] border border-gray-300 rounded-lg flex p-4 shadow-md relative bg-white lg:my-4 product">
+        <!-- Product Image -->
+        <img src="../Images/tech/iphone blue.jpg" alt="Product" class="lg:w-[180px] lg:h-[180px] w-[98px] h-[98px] object-cover rounded-md">
+        
+        <!-- Product Details -->
+        <div class="ml-4 flex-1">
+            <h2 class="text-lg font-medium text-gray-800">
+                Apple iPhone 12 – Blue, 128GB, 5G
+            </h2>
+            <div class="mt-1 flex items-center">
+                <span class="text-xl font-bold text-black">$998.00</span>
+                <span class="text-gray-400 line-through ml-2">$1128.00</span>
+            </div>
+            <div class="flex items-center mt-1 flex-wrap">
+                <!-- Stars -->
+                <div class="flex items-center">
+                    <span class="text-orange-400">★★★★</span><span class="text-gray-400">★</span>
+                </div>
+                <span class="text-orange-400 text-sm ml-1">7.5</span>
+                <span class="text-gray-500 text-sm ml-2">• 154 orders</span>
+                <span class="text-green-500 text-sm ml-2 free-ship" >• Free Shipping</span>
+            </div>
+            <p class="text-gray-500 text-sm mt-2 w-[70%]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+            </p>
+            <a href="../HTML/product-detail.html?id=3" class="text-blue-500 text-sm font-medium mt-2 inline-block">View details</a>
+        </div>
+    
+        <!-- Heart Icon at Top Right -->
+        <button class="heart-btn absolute top-2 right-2 border border-gray-300 rounded-md w-8 h-8 flex items-center justify-center shadow-sm hover:bg-gray-100 m-2">
+            <img src="../Images/MOBILE WEB IMAGES/heart2.png" alt="Heart Icon" class="heart-icon h-4 w-4">
+        </button>
+    </div>
+    <!-- Product # 4 -->
+    <div class="w-full h-[230px] border border-gray-300 rounded-lg flex p-4 shadow-md relative bg-white lg:my-4 product">
+        <!-- Product Image -->
+        <img src="../Images/tech/headphones.jpg" alt="Product" class="lg:w-[180px] lg:h-[180px] w-[98px] h-[98px] object-cover rounded-md">
+        
+        <!-- Product Details -->
+        <div class="ml-4 flex-1">
+            <h2 class="text-lg font-medium text-gray-800">
+                Blue Gaming Headset – Wired Stereo Over-Ear
+            </h2>
+            <div class="mt-1 flex items-center">
+                <span class="text-xl font-bold text-black">$998.00</span>
+                <span class="text-gray-400 line-through ml-2">$1128.00</span>
+            </div>
+            <div class="flex items-center mt-1 flex-wrap">
+                <!-- Stars -->
+                <div class="flex items-center">
+                    <span class="text-orange-400">★★★★</span><span class="text-gray-400">★</span>
+                </div>
+                <span class="text-orange-400 text-sm ml-1">7.5</span>
+                <span class="text-gray-500 text-sm ml-2">• 154 orders</span>
+                <span class="text-green-500 text-sm ml-2 free-ship" >• Free Shipping</span>
+            </div>
+            <p class="text-gray-500 text-sm mt-2 w-[70%]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+            </p>
+            <a href="../HTML/product-detail.html?id=4" class="text-blue-500 text-sm font-medium mt-2 inline-block">View details</a>
+        </div>
+    
+        <!-- Heart Icon at Top Right -->
+        <button class="heart-btn absolute top-2 right-2 border border-gray-300 rounded-md w-8 h-8 flex items-center justify-center shadow-sm hover:bg-gray-100 m-2">
+            <img src="../Images/MOBILE WEB IMAGES/heart2.png" alt="Heart Icon" class="heart-icon h-4 w-4">
+        </button>
+    </div>
+    <!-- Product # 5 -->
+    <div class="w-full h-[230px] border border-gray-300 rounded-lg flex p-4 shadow-md relative bg-white lg:my-4 product">
+        <!-- Product Image -->
+        <img src="../Images/tech/ipad.jpg" alt="Product" class="lg:w-[180px] lg:h-[180px] w-[98px] h-[98px] object-cover rounded-md">
+        
+        <!-- Product Details -->
+        <div class="ml-4 flex-1">
+            <h2 class="text-lg font-medium text-gray-800">
+                Xiaomi Pad 5 – 11” WQHD+ Display (Graphite Gray)
+            </h2>
+            <div class="mt-1 flex items-center">
+                <span class="text-xl font-bold text-black">$998.00</span>
+                <span class="text-gray-400 line-through ml-2">$1128.00</span>
+            </div>
+            <div class="flex items-center mt-1 flex-wrap">
+                <!-- Stars -->
+                <div class="flex items-center">
+                    <span class="text-orange-400">★★★★</span><span class="text-gray-400">★</span>
+                </div>
+                <span class="text-orange-400 text-sm ml-1">7.5</span>
+                <span class="text-gray-500 text-sm ml-2">• 154 orders</span>
+                <span class="text-green-500 text-sm ml-2 free-ship" >• Free Shipping</span>
+            </div>
+            <p class="text-gray-500 text-sm mt-2 w-[70%]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+            </p>
+            <a href="../HTML/product-detail.html?id=1" class="text-blue-500 text-sm font-medium mt-2 inline-block">View details</a>
+        </div>
+    
+        <!-- Heart Icon at Top Right -->
+        <button class="heart-btn absolute top-2 right-2 border border-gray-300 rounded-md w-8 h-8 flex items-center justify-center shadow-sm hover:bg-gray-100 m-2">
+            <img src="../Images/MOBILE WEB IMAGES/heart2.png" alt="Heart Icon" class="heart-icon h-4 w-4">
+        </button>
+    </div>
+    <!-- Product # 6 -->
+    <div class="w-full h-[230px] border border-gray-300 rounded-lg flex p-4 shadow-md relative bg-white lg:my-4 product">
+        <!-- Product Image -->
+        <img src="../Images/tech/laptop.jpg" alt="Product" class="lg:w-[180px] lg:h-[180px] w-[98px] h-[98px] object-cover rounded-md">
+        
+        <!-- Product Details -->
+        <div class="ml-4 flex-1">
+            <h2 class="text-lg font-medium text-gray-800">
+                Apple MacBook Pro 16” – M1 Max, Space Gray
+            </h2>
+            <div class="mt-1 flex items-center">
+                <span class="text-xl font-bold text-black">$998.00</span>
+                <span class="text-gray-400 line-through ml-2">$1128.00</span>
+            </div>
+            <div class="flex items-center mt-1 flex-wrap">
+                <!-- Stars -->
+                <div class="flex items-center">
+                    <span class="text-orange-400">★★★★</span><span class="text-gray-400">★</span>
+                </div>
+                <span class="text-orange-400 text-sm ml-1">7.5</span>
+                <span class="text-gray-500 text-sm ml-2">• 154 orders</span>
+                <span class="text-green-500 text-sm ml-2 free-ship" >• Free Shipping</span>
+            </div>
+            <p class="text-gray-500 text-sm mt-2 w-[70%]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+            </p>
+            <a href="../HTML/product-detail.html?id=6" class="text-blue-500 text-sm font-medium mt-2 inline-block">View details</a>
+        </div>
+    
+        <!-- Heart Icon at Top Right -->
+        <button class="heart-btn absolute top-2 right-2 border border-gray-300 rounded-md w-8 h-8 flex items-center justify-center shadow-sm hover:bg-gray-100 m-2">
+            <img src="../Images/MOBILE WEB IMAGES/heart2.png" alt="Heart Icon" class="heart-icon h-4 w-4">
+        </button>
+    </div>
+    <!-- Product # 7 -->
+    <div class="w-full h-[230px] border border-gray-300 rounded-lg flex p-4 shadow-md relative bg-white lg:my-4 product">
+        <!-- Product Image -->
+        <img src="../Images/tech/watch.jpg" alt="Product" class="lg:w-[180px] lg:h-[180px] w-[98px] h-[98px] object-cover rounded-md">
+        
+        <!-- Product Details -->
+        <div class="ml-4 flex-1">
+            <h2 class="text-lg font-medium text-gray-800">
+                Amazfit GTS 4 Smartwatch – Cloud White
+            </h2>
+            <div class="mt-1 flex items-center">
+                <span class="text-xl font-bold text-black">$998.00</span>
+                <span class="text-gray-400 line-through ml-2">$1128.00</span>
+            </div>
+            <div class="flex items-center mt-1 flex-wrap">
+                <!-- Stars -->
+                <div class="flex items-center">
+                    <span class="text-orange-400">★★★★</span><span class="text-gray-400">★</span>
+                </div>
+                <span class="text-orange-400 text-sm ml-1">7.5</span>
+                <span class="text-gray-500 text-sm ml-2">• 154 orders</span>
+                <span class="text-green-500 text-sm ml-2 free-ship" >• Free Shipping</span>
+            </div>
+            <p class="text-gray-500 text-sm mt-2 w-[70%]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+            </p>
+            <a href="../HTML/product-detail.html?id=7" class="text-blue-500 text-sm font-medium mt-2 inline-block">View details</a>
+        </div>
+    
+        <!-- Heart Icon at Top Right -->
+        <button class="heart-btn absolute top-2 right-2 border border-gray-300 rounded-md w-8 h-8 flex items-center justify-center shadow-sm hover:bg-gray-100 m-2">
+            <img src="../Images/MOBILE WEB IMAGES/heart2.png" alt="Heart Icon" class="heart-icon h-4 w-4">
+        </button>
+    </div>
+    <!-- Product # 8 -->
+    <div class="w-full h-[230px] border border-gray-300 rounded-lg flex p-4 shadow-md relative bg-white lg:my-4 product">
+        <!-- Product Image -->
+        <img src="../Images/tech/white headphones.jpg" alt="Product" class="lg:w-[180px] lg:h-[180px] w-[98px] h-[98px] object-cover rounded-md">
+        
+        <!-- Product Details -->
+        <div class="ml-4 flex-1">
+            <h2 class="text-lg font-medium text-gray-800">
+                Wireless Over-Ear Headphones – White Gold Edition
+            </h2>
+            <div class="mt-1 flex items-center">
+                <span class="text-xl font-bold text-black">$998.00</span>
+                <span class="text-gray-400 line-through ml-2">$1128.00</span>
+            </div>
+            <div class="flex items-center mt-1 flex-wrap">
+                <!-- Stars -->
+                <div class="flex items-center">
+                    <span class="text-orange-400">★★★★</span><span class="text-gray-400">★</span>
+                </div>
+                <span class="text-orange-400 text-sm ml-1">7.5</span>
+                <span class="text-gray-500 text-sm ml-2">• 154 orders</span>
+                <span class="text-green-500 text-sm ml-2 free-ship" >• Free Shipping</span>
+            </div>
+            <p class="text-gray-500 text-sm mt-2 w-[70%]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+            </p>
+            <a href="../HTML/product-detail.html?id=8" class="text-blue-500 text-sm font-medium mt-2 inline-block">View details</a>
+        </div>
+    
+        <!-- Heart Icon at Top Right -->
+        <button class="heart-btn absolute top-2 right-2 border border-gray-300 rounded-md w-8 h-8 flex items-center justify-center shadow-sm hover:bg-gray-100 m-2">
+            <img src="../Images/MOBILE WEB IMAGES/heart2.png" alt="Heart Icon" class="heart-icon h-4 w-4">
+        </button>
+    </div>
+    <!-- Product # 9 -->
+    <div class="w-full h-[230px] border border-gray-300 rounded-lg flex p-4 shadow-md relative bg-white lg:my-4 product">
+        <!-- Product Image -->
+        <img src="../Images/tech/iphone red.jpg" alt="Product" class="lg:w-[180px] lg:h-[180px] w-[98px] h-[98px] object-cover rounded-md">
+        
+        <!-- Product Details -->
+        <div class="ml-4 flex-1">
+            <h2 class="text-lg font-medium text-gray-800">
+                Apple iPhone 12 – Red, 128GB, 5G
+            </h2>
+            <div class="mt-1 flex items-center">
+                <span class="text-xl font-bold text-black">$998.00</span>
+                <span class="text-gray-400 line-through ml-2">$1128.00</span>
+            </div>
+            <div class="flex items-center mt-1 flex-wrap">
+                <!-- Stars -->
+                <div class="flex items-center">
+                    <span class="text-orange-400">★★★★</span><span class="text-gray-400">★</span>
+                </div>
+                <span class="text-orange-400 text-sm ml-1">7.5</span>
+                <span class="text-gray-500 text-sm ml-2">• 154 orders</span>
+                <span class="text-green-500 text-sm ml-2 free-ship" >• Free Shipping</span>
+            </div>
+            <p class="text-gray-500 text-sm mt-2 w-[70%]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+            </p>
+            <a href="../HTML/product-detail.html?id=9" class="text-blue-500 text-sm font-medium mt-2 inline-block">View details</a>
+        </div>
+    
+        <!-- Heart Icon at Top Right -->
+        <button class="heart-btn absolute top-2 right-2 border border-gray-300 rounded-md w-8 h-8 flex items-center justify-center shadow-sm hover:bg-gray-100 m-2">
+            <img src="../Images/MOBILE WEB IMAGES/heart2.png" alt="Heart Icon" class="heart-icon h-4 w-4">
+        </button>
+    </div>
+    
+  </div>
+    <div class="w-full flex justify-end items-center mt-4 py-10">
+        <!-- Show entries dropdown -->
+        <div class="relative">
+            <select class="border border-gray-300 rounded px-3 py-1 text-gray-500 text-sm focus:outline-none">
+                <option value="10">Show 10</option>
+                <option value="20">Show 20</option>
+                <option value="50">Show 50</option>
+            </select>
+        </div>
+    
+        <!-- Pagination -->
+        <div class="flex items-center ml-4 border border-gray-300 rounded">
+            <!-- Previous Button -->
+            <button class="px-3 py-1 text-gray-400 hover:bg-gray-100 font-semibold">
+                &lt;
+            </button>
+    
+            <!-- Page Numbers -->
+            <button class="px-3 py-1 bg-gray-300 text-gray-700 border-r border-gray-300 text-sm font-semibold">
+                1
+            </button>
+            <button class="px-3 py-1 text-gray-700 hover:bg-gray-100 border-r border-gray-300 text-sm font-semibold">
+                2
+            </button>
+            <button class="px-3 py-1 text-gray-700 hover:bg-gray-100 border-r border-gray-300 text-sm font-semibold">
+                3
+            </button>
+    
+            <!-- Next Button -->
+            <button class="px-3 py-1 text-gray-800 hover:bg-gray-100 font-semibold">
+                &gt;
+            </button>
+        </div>
+    </div>
+    </div>  
+
+  </section>
+</div>
+
+
+
+<!-- Footer -->
+<footer class="bg-gray-100 text-gray-600 text-sm">
+    <div class="max-w-7xl mx-auto py-8 px-4 text-center border-b">
+      <h3 class="font-semibold text-lg text-gray-900">
+        Subscribe on our newsletter
+      </h3>
+      <p class="text-gray-500 text-base mb-4">
+        Get daily news on upcoming offers from many suppliers all over the
+        world
+      </p>
+      <div class="flex justify-center items-center gap-2">
+        <input
+          type="email"
+          placeholder="Email"
+          class="px-4 py-2 border rounded-lg w-72 focus:outline-none"
+        />
+        <button class="bg-blue-600 text-white px-6 py-2 rounded-lg">
+          Subscribe
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-6 py-8 px-4"
+    >
+      <div>
+        <div class="flex items-center gap-2">
+          <img src="../Images/homepage/logo-symbol.png" alt="" />
+          <span class="text-3xl font-bold text-blue-500">Brand</span>
+        </div>
+        <p class="text-gray-500 text-base mt-2">
+          Best information about the company goes here but now lorem ipsum is
+        </p>
+        <div class="flex gap-3 mt-4">
+          <img
+            src="../Images/socials/facebook.png"
+            alt="Facebook"
+            class="h-8"
+          />
+          <img
+            src="../Images/socials/twitter.png"
+            alt="Twitter"
+            class="h-8"
+          />
+          <img
+            src="../Images/socials/linkedin.png"
+            alt="LinkedIn"
+            class="h-8"
+          />
+          <img
+            src="../Images/socials/instagram.png"
+            alt="Instagram"
+            class="h-8"
+          />
+          <img
+            src="../Images/socials/youtube.png"
+            alt="YouTube"
+            class="h-8"
+          />
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-gray-900 text-base">About</h4>
+        <ul class="text-gray-500 text-base space-y-2 mt-2">
+          <li>About Us</li>
+          <li>Find store</li>
+          <li>Categories</li>
+          <li>Blogs</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-gray-900 text-base">Partnership</h4>
+        <ul class="text-gray-500 text-base space-y-2 mt-2">
+          <li>About Us</li>
+          <li>Find store</li>
+          <li>Categories</li>
+          <li>Blogs</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-gray-900 text-base">For users</h4>
+        <ul class="text-gray-500 text-base space-y-2 mt-2">
+          <li>Login</li>
+          <li>Register</li>
+          <li>Settings</li>
+          <li>My Orders</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-gray-900 text-base">Get app</h4>
+        <div class="mt-2 space-y-2">
+          <img
+            src="../Images/homepage/apple.png"
+            alt="App Store"
+            class="w-32 rounded-md"
+          />
+          <img
+            src="../Images/homepage/type=Google Play.png"
+            alt="Google Play"
+            class="w-32 rounded-md"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="border-t py-7 text-center flex justify-between items-center px-20"
+    >
+      <p class="text-base">&copy; 2023 Ecommerce.</p>
+      <div class="flex items-center gap-2">
+        <img
+          src="../Images/homepage/Property 1=US.png"
+          alt=""
+          class="h-6"
+        />
+        <span>English</span>
+        <img
+          src="../Images/homepage/dropdown.png"
+          alt=""
+          class="h-2"
+        />
+      </div>
+    </div>
+  </footer>
+
+  <script src="../JS/product-list.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Select all the "View details" links
+        const viewDetailsLinks = document.querySelectorAll('.view-details');
+        
+        viewDetailsLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent the default link action
+                const url = link.getAttribute('data-url'); // Get the URL from data attribute
+                if (url) {
+                    window.location.href = url; // Redirect to the URL
+                }
+            });
+        });
+    });
+</script>
+
+
+</body>
+</html>
